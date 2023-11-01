@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- Start Page Title Area -->
+	{% for blog in blogs %}
+	<div class="page-title-area item-bg3" style="background-image: url({{ blog.url}});">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="container">
+					<div class="page-title-content">
+						<h2>{{ blog.name}}</h2>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Page Title Area -->
+
+	<!-- Start Services Section -->
+	<section  style="background-color: blue;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 col-md-12">
+					<div class="hire-content">
+
+						<p>{{ blog.description|safe}} </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{% endfor %}
+	<!-- End Hire Section -->
+
+{% endblock %}

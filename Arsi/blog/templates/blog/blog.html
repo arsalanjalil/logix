@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- Start Page Title Area -->
+	<div class="page-title-area item-bg3" style="background-image: url({% static '' %}/images/page-title-bg-2.jpg);">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="container">
+					<div class="page-title-content">
+						<h2>Blog</h2>
+						<ul>
+							<li><a href="{% url 'home' %}">Home</a>
+							</li>
+							<li>Blog</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Page Title Area -->
+
+	<!-- Start Blog Section -->
+	<section class="blog-section section-padding">
+		<div class="container">
+			<div class="row">
+				{% for blog in blogs %}
+				<div class="col-lg-4 col-md-6">
+					<div class="blog-item">
+						<div class="blog-image">
+							<a href="single-blog.html">
+								<img src="{{ blog.url}}" alt="{{ blog.alt}}">
+							</a>
+						</div>
+						<div class="single-blog-item">
+							<ul class="blog-list">
+								<li>
+									<a href="#"> <i class="fa fa-user-alt"></i> Author</a>
+								</li>
+								<li>
+									<a href="#"> <i class="fas fa-calendar-week"></i>{{ blog.show_date}}</a>
+								</li>
+							</ul>
+							<div class="blog-content">
+								<h3>
+                                    <a href="single-blog.html">
+										{{ blog.title}}
+                                    </a>
+                                </h3>
+								<p>{{ blog.short_description}}</p>
+								<div class="blog-btn"><a href="{% url 'show_blog' id=blog.id %}" class="default-btn blog-btn-one">Continue Reading <span></span></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<div class="col-lg-12 col-md-12">
+					<div class="pagination-area"> <a href="#" class="prev page-numbers"><i class="fas fa-angle-left"></i></a>
+						<a href="#" class="page-numbers">1</a>
+						<span class="page-numbers current" aria-current="page">2</span>
+						<a href="#" class="page-numbers">3</a>
+						<a href="#" class="page-numbers">4</a>
+						<a href="#" class="next page-numbers"><i class="fas fa-angle-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
