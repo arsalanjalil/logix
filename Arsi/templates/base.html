@@ -1,203 +1,667 @@
 <!doctype html>
-<html lang="zxx">
-
+<html lang="zxx" class="theme-light">
+	
+<!-- Mirrored from templates.envytheme.com/startp/default/machine-learning-index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Sep 2023 20:32:29 GMT -->
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- Title -->
-	<title>Free Techmax - IT Solutions & Technology HTML5 Website Template</title>
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<!-- Favicon -->
-	{% load static %}
-	<link rel="icon" type="image/png" href="{% static '' %}images//favicon.png">
-	<!-- Bootstrap Min CSS -->
-	{% include 'css.html' %}
-</head>
+        {% load static %}
+        {% load base_tags %}
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- All CSS Link -->
+        
+		<link rel="stylesheet" href="{% static '' %}assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/animate.min.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/meanmenu.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/boxicons.min.css">
+		<link rel="stylesheet" href="{% static '' %}assets/css/magnific-popup.min.css">
+        <link rel="stylesheet" href="{% static '' %}assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="{% static '' %}assets/css/flaticon.css">
+		<link rel="stylesheet" href="{% static '' %}assets/css/odometer.min.css">
+		<link rel="stylesheet" href="{% static '' %}assets/css/slick.min.css">
+		<link rel="stylesheet" href="{% static '' %}assets/css/style.css">
+		<link rel="stylesheet" href="{% static '' %}assets/css/responsive.css">
+		<link rel="stylesheet" href="{% static '' %}assets/css/dark-color/dark-style.css">
+		
+		<title>StartP - IT Startup & Digital Business Services HTML Template</title>
 
-<body>
-
-	<!-- Start Preloader Area -->
-	<div class="preloader">
-		<div class="d-table">
-			<div class="d-table-cell">
-			<div class="lds-spinner">
-				<div></div><div></div><div></div>
-				<div></div><div></div><div></div>
-				<div></div><div></div><div></div>
-				<div></div><div></div><div></div>
-			</div>
-			</div>
+		<link rel="icon" type="image/png" href="{% url 'home' %}">
+	</head>
+	
+	<body>
+		
+		<!-- Start Preloader Area -->
+        <div class="preloader">
+			<div class="spinner"></div>
 		</div>
-	</div>
-	<!-- End Preloader Area -->
+        <!-- End Preloader Area -->
 
-	<!-- Start Navbar Area -->
-	<div class="navbar-area">
+		<!-- Start Navbar Area -->
+		{% header1 request %}
+        <!-- End Navbar Area -->
+        
+         {% block content %}
+		 {% endblock %}
+        <!-- End Free Trial Area -->
 
-		<div class="frtechmax-responsive-nav index-navber-responsive">
+		<!-- Start Footer Area -->
+		<footer class="footer-area bg-f7fafd">
 			<div class="container">
-				<div class="frtechmax-responsive-menu">
-					<div class="logo">
-						<a href="index.html">
-							<img src="{% static '' %}images//logo-black.png" class="white-logo" alt="logo">
-							<img src="{% static '' %}images//logo-black.png" class="black-logo" alt="logo">
-						</a>
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="logo black-logo">
+								<a href="{% url 'home' %}"><img src="{% static '' %}assets/img/logo.png" alt="logo"></a>
+							</div>
+							<div class="logo white-logo">
+								<a href="{% url 'home' %}"><img src="{% static '' %}assets/img/white-logo.png" alt="logo"></a>
+							</div>
+							<p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget pl-5">
+							<h3>Company</h3>
+							<ul class="list">
+								<li><a href="about-1.html">About Us</a></li>
+								<li><a href="services-1.html">Services</a></li>
+								<li><a href="features.html">Features</a></li>
+								<li><a href="pricing.html">Our Pricing</a></li>
+								<li><a href="blog-1.html">Latest News</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<h3>Support</h3>
+							<ul class="list">
+								<li><a href="faq.html">FAQ's</a></li>
+								<li><a href="privacy-policy.html">Privacy Policy</a></li>
+								<li><a href="terms-conditions.html">Terms & Condition</a></li>
+								<li><a href="contact.html">Support Us</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<h3>Address</h3>
+							
+							<ul class="footer-contact-info">
+								<li><i data-feather="map-pin"></i> 27 Division St, New York, NY 10002, USA</li>
+								<li><i data-feather="mail"></i> Email: <a href="https://templates.envytheme.com/cdn-cgi/l/email-protection#bbd3ded7d7d4fbc8cfdac9cfcb95d8d4d6"><span class="__cf_email__" data-cfemail="86eee3eaeae9c6f5f2e7f4f2f6a8e5e9eb">[email&#160;protected]</span></a></li>
+								<li><i data-feather="phone-call"></i> Phone: <a href="tel:+ (321) 984 754">+ (321) 984 754</a></li>
+							</ul>
+							<ul class="social-links">
+								<li><a href="#" class="facebook" target="_blank"><i data-feather="facebook"></i></a></li>
+								<li><a href="#" class="twitter" target="_blank"><i data-feather="twitter"></i></a></li>
+								<li><a href="#" class="instagram" target="_blank"><i data-feather="instagram"></i></a></li>
+								<li><a href="#" class="linkedin" target="_blank"><i data-feather="linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-12 col-md-12">
+						<div class="copyright-area">
+							<p>Copyright @<script data-cfasync="false" src="https://templates.envytheme.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear())</script> All Rights Reserved by <a href="{% url 'home' %}" target="_blank">E-Com, LLC</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="techmax-nav index-navber">
-			<div class="container">
-				<nav class="navbar navbar-expand-md navbar-light">
-					<a class="navbar-brand" href="index.html">
-						<img src="{% static '' %}images//logo-black.png" class="white-logo" alt="logo">
-						<img src="{% static '' %}images//logo-black.png" class="black-logo" alt="logo">
-					</a>
-					<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-						<ul class="navbar-nav">
-							<li class="nav-item">
-								<a href="{% url 'home'%}" class="nav-link">Home</a>
-							</li>
-							<li class="nav-item">
-								<a href="{% url 'show_about' %}" class="nav-link">About Us</a>
-							</li>
-							<li class="nav-item">
-								<a href="{% url 'show_service' %}" class="nav-link">Services</a>
-							</li>
-							<li class="nav-item">
-								<a href="{% url 'show_blog' %}" class="nav-link">Blog</a>
-							</li>
-							<li class="nav-item">
-								<a href="{% url 'show_contact' %}" class="nav-link">Contact</a>
-							</li>
-						</ul>
 
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-	<!-- End Navbar Area -->
-	{% block content %}
-	{% endblock %}
+			<img src="{% static '' %}assets/img/map.png" class="map" alt="map">
+			<div class="shape1"><img src="{% static '' %}assets/img/shape1.png" alt="shape"></div>
+			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+		</footer>
+		<!-- End Footer Area -->
 
-	<!-- Start Footer Section -->
-	<section class="footer-area section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<a class="footer-logo" href="#">
-							<img src="{% static '' %}images//logo.png" class="white-logo" alt="logo">
-						</a>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco consectetur laboris.</p>
-						<ul class="footer-social">
-							<li>
-								<a href="#"> <i class="fab fa-facebook-f"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#"> <i class="fab fa-twitter"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#"> <i class="fab fa-pinterest"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#"> <i class="fab fa-linkedin"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<div class="footer-heading">
-							<h3>Our Services</h3>
-						</div>
-						<ul class="footer-quick-links">
-							<li> <a href="#">IT Solution</a></li>
-							<li> <a href="#">Web Development</a></li>
-							<li> <a href="#">Networking Services</a></li>
-							<li> <a href="#">SEO Optimization</a></li>
-							<li> <a href="#">App Optimization</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<div class="footer-heading">
-							<h3>Quick Links</h3>
-						</div>
-						<ul class="footer-quick-links">
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="projects.html">Case Study</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="privacy-policy.html">Privacy Policy</a></li>
-							<li><a href="terms-condition.html">Terms & Conditions</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<div class="footer-heading">
-							<h3>Contact Information</h3>
-						</div>
-						<div class="footer-info-contact">
-							<span><strong>Phone:</strong> <a href="tel:0802235678">+000 313 577 111</a></span>
-						</div>
-						<div class="footer-info-contact">
-							<span><strong>Email:</strong> <a href="mailto:demo@example.com">demo@example.com</a></span>
-						</div>
-						<div class="footer-info-contact">
-							<span><strong>Address:</strong> 4035 Heavens, Los Angeles, California</span>
-						</div>
-						<!-- Start Subscribe Area -->
-						<form class="newsletter-form">
-							<input type="email" class="input-newsletter" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off">
-							<button class="default-btn" type="submit">Subscribe <span></span></button>
-						</form>
-						<!-- End Subscribe Area -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End Footer Section -->
+		<div class="go-top"><i data-feather="arrow-up"></i></div>
 
-	<!-- Start Copy Right Section -->
-	<div class="copyright-area">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-6 col-md-6">
-					<p> <i class="far fa-copyright"></i> 2023 Techmax - All Rights Reserved.</p>
-				</div>
-				<div class="col-lg-6 col-md-6">
-					<ul>
-						<li> <a href="terms-condition.html">Terms & Conditions</a>
-						</li>
-						<li> <a href="privacy-policy.html">Privacy Policy</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Copy Right Section -->
+		<!-- Dark/Light Toggle -->
+		<div class="dark-version">
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
+        </div>
+		
+		<!-- All JS Link -->
+        
+		<script src="{% static '' %}assets/js/jquery.min.js"></script>
+		<script src="{% static '' %}assets/js/bootstrap.bundle.min.js"></script>
+		<script src="{% static '' %}assets/js/meanmenu.min.js"></script>
+		<script src="{% static '' %}assets/js/wow.min.js"></script>
+		<script src="{% static '' %}assets/js/magnific-popup.min.js"></script>
+		<script src="{% static '' %}assets/js/appear.min.js"></script>
+		<script src="{% static '' %}assets/js/odometer.min.js"></script>
+        <script src="{% static '' %}assets/js/slick.min.js"></script>
+        <script src="{% static '' %}assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="{% static '' %}assets/js/isotope.pkgd.min.js"></script>
+        <script src="{% static '' %}assets/js/owl.carousel.min.js"></script>
+		<script src="{% static '' %}assets/js/feather.min.js"></script>
+        <script src="{% static '' %}assets/js/form-validator.min.js"></script>
+        <script src="{% static '' %}assets/js/contact-form-script.js"></script>
+		
+        <script>
+            // function to set a given theme/color-scheme
+function setTheme(themeName) {
+	localStorage.setItem('theme', themeName);
+	document.documentElement.className = themeName;
+}
+// function to toggle between light and dark theme
+function toggleTheme() {
+	if (localStorage.getItem('theme') === 'theme-dark') {
+		
+		setTheme('theme-light');
+	} else {
+		setTheme('theme-dark');
+	}
+}
 
-	<!-- Start Go Top Section -->
-	<div class="go-top">
-		<i class="fas fa-chevron-up"></i>
-		<i class="fas fa-chevron-up"></i>
-	</div>
-	<!-- End Go Top Section -->
+//
+(function($){
+	"use strict";
 
-	<!-- jQuery Min JS -->
-	{% include 'js.html' %}
+	// Feather Icon Js
+	feather.replace();
 
-</body>
+	// Mean Menu
+	$('.mean-menu').meanmenu({
+		meanScreenWidth: "991"
+	});
+	
+	// Magnific Popup
+	$('.popup-youtube').magnificPopup({
+		disableOn: 320,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: false
+	});
 
+	// Header Sticky
+	$(window).on('scroll',function() {
+		if ($(this).scrollTop() > 120){  
+			$('#header').addClass("is-sticky");
+		}
+		else{
+			$('#header').removeClass("is-sticky");
+		}
+	});
+
+	// Popup Gallery
+	$('.popup-btn').magnificPopup({
+		type: 'image',
+		gallery:{
+			enabled:true
+		}
+	});
+
+	// Others Option Responsive JS
+	$(".others-option-for-responsive .dot-menu").on("click", function(){
+		$(".others-option-for-responsive .container .container").toggleClass("active");
+	});
+
+	// Works Slides
+	$('.works-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: false,
+		autoplayHoverPause: true,
+		autoplay: true,
+		margin:30,
+		responsive: {
+			0: {
+				items: 1
+			},
+			768: {
+				items: 2
+			},
+			992: {
+				items: 3
+			},
+			1500: {
+				items: 4
+			}
+		}
+	});
+
+	// Boxes Slides
+	$('.boxes-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: false,
+		autoplayHoverPause: true,
+		autoplay: true,
+		margin: 30,
+		responsive: {
+			0: {
+				items: 1
+			},
+			576: {
+				items: 2
+			},
+			768: {
+				items: 3
+			},
+			992: {
+				items: 4
+			}
+		}
+	});
+
+	// Testimonials Slides
+	$('.testimonials-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: true,
+		autoplayHoverPause: true,
+		autoplay: true,
+		items: 1,
+		smartSpeed: 1000,
+		autoplayTimeout: 5000,
+	});
+
+	// Team Slides
+	$('.team-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: true,
+		autoplayHoverPause: true,
+		autoplay: true,
+		margin: 30,
+		responsive: {
+			0: {
+				items: 1
+			},
+			576: {
+				items: 2
+			},
+			768: {
+				items: 2
+			},
+			992: {
+				items: 3
+			},
+			1500: {
+				items: 5
+			}
+		}
+	});
+
+	// Feedback Carousel
+	var $imagesSlider = $(".feedback-slides .client-feedback>div"),
+	$thumbnailsSlider = $(".client-thumbnails>div");
+	// images options
+	$imagesSlider.slick({
+		speed: 300,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		cssEase: 'linear',
+		fade: true,
+		autoplay: true,
+		draggable: true,
+		asNavFor: ".client-thumbnails>div",
+		prevArrow: '.client-feedback .prev-arrow',
+		nextArrow: '.client-feedback .next-arrow'
+	});
+	// Thumbnails options
+	$thumbnailsSlider.slick({
+		speed: 300,
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		cssEase: 'linear',
+		autoplay: true,
+		centerMode: true,
+		draggable: false,
+		focusOnSelect: true,
+		asNavFor: ".feedback-slides .client-feedback>div",
+		prevArrow: '.client-thumbnails .prev-arrow',
+		nextArrow: '.client-thumbnails .next-arrow',
+	});
+	
+	// Go to Top
+	$(function(){
+		//Scroll event
+		$(window).on('scroll', function(){
+			var scrolled = $(window).scrollTop();
+			if (scrolled > 300) $('.go-top').fadeIn('slow');
+			if (scrolled < 300) $('.go-top').fadeOut('slow');
+		});  
+		//Click event
+		$('.go-top').on('click', function() {
+			$("html, body").animate({ scrollTop: "0" },  500);
+		});
+	});
+	
+	// FAQ Accordion
+	$(function() {
+		$('.accordion').find('.accordion-title').on('click', function(){
+			// Adds Active Class
+			$(this).toggleClass('active');
+			// Expand or Collapse This Panel
+			$(this).next().slideToggle('fast');
+			// Hide The Other Panels
+			$('.accordion-content').not($(this).next()).slideUp('fast');
+			// Removes Active Class From Other Titles
+			$('.accordion-title').not($(this)).removeClass('active');		
+		});
+	});
+
+	// Tabs
+	$("#tabs li").on("click", function(){
+		var tab = $(this).attr("id");
+		if ($(this).hasClass("inactive")) {
+			$(this).removeClass("inactive");
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active").addClass("inactive");
+			$("#" + tab + "_content").addClass("show");
+			$("#" + tab + "_content").siblings("div").removeClass("show");
+		}
+	});
+	
+	// Count Time 
+	function makeTimer() {
+		var endTime = new Date("August 19, 2022 17:00:00 PDT");			
+		var endTime = (Date.parse(endTime)) / 1000;
+		var now = new Date();
+		var now = (Date.parse(now) / 1000);
+		var timeLeft = endTime - now;
+		var days = Math.floor(timeLeft / 86400); 
+		var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+		var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+		var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+		if (hours < "10") { hours = "0" + hours; }
+		if (minutes < "10") { minutes = "0" + minutes; }
+		if (seconds < "10") { seconds = "0" + seconds; }
+		$("#days").html(days + "<span>Days</span>");
+		$("#hours").html(hours + "<span>Hours</span>");
+		$("#minutes").html(minutes + "<span>Minutes</span>");
+		$("#seconds").html(seconds + "<span>Seconds</span>");
+	}
+	setInterval(function() { makeTimer(); }, 1000);
+
+	// Products Details Image Slides
+	var owl = $(".products-details-image-slides");
+	owl.owlCarousel({
+		loop: true,
+		nav: true,
+		dots: false,
+		autoplay: true,
+		items: 1,
+		smartSpeed: 1000,
+		autoplayTimeout: 5000,
+		navText: [
+			"<i class='bx bx-chevron-left'></i>",
+			"<i class='bx bx-chevron-right'></i>"
+		]
+	});
+
+	// Input Plus & Minus Number JS
+	$('.input-counter').each(function() {
+		var spinner = jQuery(this),
+		input = spinner.find('input[type="text"]'),
+		btnUp = spinner.find('.plus-btn'),
+		btnDown = spinner.find('.minus-btn'),
+		min = input.attr('min'),
+		max = input.attr('max');
+		
+		btnUp.on('click', function() {
+			var oldValue = parseFloat(input.val());
+			if (oldValue >= max) {
+				var newVal = oldValue;
+			} else {
+				var newVal = oldValue + 1;
+			}
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change");
+		});
+		btnDown.on('click', function() {
+			var oldValue = parseFloat(input.val());
+			if (oldValue <= min) {
+				var newVal = oldValue;
+			} else {
+				var newVal = oldValue - 1;
+			}
+			spinner.find("input").val(newVal);
+			spinner.find("input").trigger("change");
+		});
+	});
+
+	// Odometer JS
+	$('.odometer').appear(function(e) {
+		var odo = $(".odometer");
+		odo.each(function() {
+			var countNumber = $(this).attr("data-count");
+			$(this).html(countNumber);
+		});
+	});
+
+	// Partner Slides
+	$('.partner-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: false,
+		autoplayHoverPause: true,
+		autoplay: true,
+		margin: 30,
+		responsive: {
+			0: {
+				items: 2
+			},
+			576: {
+				items: 4
+			},
+			768: {
+				items: 4
+			},
+			992: {
+				items: 6
+			}
+		}
+	});
+
+	// Tabs JS
+	(function ($) {
+		$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+		$('.tab ul.tabs li a').on('click', function (g) {
+			var tab = $(this).closest('.tab'), 
+			index = $(this).closest('li').index();
+			tab.find('ul.tabs > li').removeClass('current');
+			$(this).closest('li').addClass('current');
+			tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+			tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+			g.preventDefault();
+		});
+	})(jQuery);
+	
+	// ML Feedback Slides
+	$('.ml-feedback-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		smartSpeed: 1000,
+		autoplayTimeout: 5000,
+		dots: true,
+		animateOut: 'fadeOut',
+		autoplayHoverPause: true,
+		autoplay: true,
+		items: 1
+	});
+
+	// ML Projects Slides
+	$('.ml-projects-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		smartSpeed: 1000,
+		autoplayTimeout: 5000,
+		dots: true,
+		autoplayHoverPause: true,
+		autoplay: true,
+		margin: 30,
+		responsive: {
+			0: {
+				items: 1
+			},
+			576: {
+				items: 2
+			},
+			768: {
+				items: 2
+			},
+			992: {
+				items: 3
+			},
+			1200: {
+				items: 4
+			}
+		}
+	});
+
+	// Agency Portfolio Home Slides
+	$('.agency-portfolio-home-slides').owlCarousel({
+		loop: true,
+		nav: true,
+		smartSpeed: 1000,
+		autoplayTimeout: 5000,
+		dots: false,
+		animateOut: 'fadeOut',
+		autoplayHoverPause: true,
+		autoplay: true,
+		items: 1,
+		navText: [
+			"<i class='bx bx-chevron-left'></i>",
+			"<i class='bx bx-chevron-right'></i>"
+		]
+	});
+
+	// Blog Slides
+	$('.blog-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: true,
+		autoplayHoverPause: true,
+		autoplay: true,
+		smartSpeed: 1000,
+		autoplayTimeout: 5000,
+		margin: 30,
+		responsive: {
+			0: {
+				items: 1
+			},
+			768: {
+				items: 2
+			},
+			992: {
+				items: 3
+			}
+		}
+	});
+	
+	// imagesLoaded
+	$('.grid').imagesLoaded(function() {
+		// filter items on button click
+		$('.shorting-menu').on('click', 'button', function() {
+			var filterValue = $(this).attr('data-filter');
+			$grid.isotope({
+				filter: filterValue
+			});
+		});
+	});
+
+	// Shorting Menu
+	$('.shorting-menu button').on('click', function(event) {
+		$(this).siblings('.active').removeClass('active');
+		$(this).addClass('active');
+		event.preventDefault();
+	});
+
+	// Agency Portfolio Feedback Slides
+	$('.agency-portfolio-feedback-slides').owlCarousel({
+		loop: false,
+		nav: false,
+		smartSpeed: 1000,
+		autoplayTimeout: 5000,
+		dots: true,
+		autoplayHoverPause: true,
+		autoplay: true,
+		items: 1
+	});
+
+	// Isotop Js
+	var $grid = $('.projects-items').isotope({
+		itemSelector: '.grid-item',
+		percentPosition: true,
+		masonry: {
+			columnWidth: '.grid-item'
+		}
+	});
+
+	// Agency Portfolio-Partner Slides
+	$('.agency-portfolio-partner-slides').owlCarousel({
+		loop: true,
+		nav: false,
+		dots: false,
+		autoplayHoverPause: true,
+		autoplay: true,
+		margin: 30,
+		responsive: {
+			0: {
+				items: 2
+			},
+			576: {
+				items: 4
+			},
+			768: {
+				items: 4
+			},
+			992: {
+				items: 6
+			}
+		}
+	});
+	
+	$(window).on ('load', function (){
+        // WOW JS
+        if ($(".wow").length) { 
+            var wow = new WOW({
+            boxClass:     'wow',      // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset:       20,          // distance to the element when triggering the animation (default is 0)
+            mobile:       true,       // trigger animations on mobile devices (default is true)
+            live:         true,       // act on asynchronously loaded content (default is true)
+          });
+          wow.init();
+        }
+	});
+
+	// Buy Now Btn
+   
+	// Preloader
+    $(window).on('load', function () {
+        $('.preloader').fadeOut();
+    });
+
+}(jQuery));
+
+
+
+// Immediately invoked function to set the theme on initial load
+(function () {
+	if (localStorage.getItem('theme') === 'theme-dark') {
+		setTheme('theme-dark');
+		document.getElementById('slider').checked = false;
+	} else {
+		setTheme('theme-light');
+	  document.getElementById('slider').checked = true;
+	}
+})();
+        </script>
+	</body>
+
+<!-- Mirrored from templates.envytheme.com/startp/default/machine-learning-index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Sep 2023 20:33:00 GMT -->
 </html>

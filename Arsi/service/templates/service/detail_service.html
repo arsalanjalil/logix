@@ -9,10 +9,6 @@
 				<div class="container">
 					<div class="page-title-content">
 						<h2>{{ service.name}}</h2>
-<!--						<ul>-->
-<!--							<li><a href="index.html">Home</a></li>-->
-<!--							<li>Services</li>-->
-<!--						</ul>-->
 					</div>
 				</div>
 			</div>
@@ -28,14 +24,56 @@
 					<div class="hire-content">
 
 						<p>{{ service.description|safe}} </p>
-						<div class="hire-btn">
-							<a class="default-btn-one" href="contact.html">Contact Us <span></span></a>
+						<div class="col-lg-12 col-md-12">
+									<button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add To Service <span></span></button>
+						</div>
+						<div id="myModal" class="modal fade" role="dialog">
+  							<div class="modal-dialog">
+
+    						<!-- Modal content-->
+    							<div class="modal-content">
+      								<div class="modal-header">
+        								<h4 class="modal-title"> Order </h4>
+									</div>
+      								<div class="modal-body">
+        								<form method="Post" action="{% url 'order' id=service.id %}">
+											{% csrf_token %}
+											<div class="form-group">
+      											<label for="service">Date:</label>
+      												<input type="date" class="form-control"  placeholder="Enter date" name="create_at">
+    										</div>
+											<div class="form-group">
+												<label for="service">Choice File:</label>
+												<input type="file" id="myFile" name="file" class="form-control">
+											</div>
+    										<div class="form-group">
+											  	<label for="service">Choice:</label></br>
+											  	<input type="radio" id="html" name="sate" value="HTML">
+												<label for="html">HTML</label><br>
+												<input type="radio" id="css" name="sate" value="CSS">
+												<label for="service">CSS</label><br>
+												<input type="radio" id="javascript" name="sate" value="JavaScript">
+												<label for="service">JavaScript</label>
+											</div>
+											<button type="submit" id="service_order" >Submit</button>
+
+
+										</form>
+      								</div>
+      								<div class="modal-footer">
+        								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      								</div>
+    							</div>
+
+  							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<!-- End Hire Section -->
  {% endfor %}
+
 {% endblock %}

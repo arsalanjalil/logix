@@ -8,7 +8,7 @@ class Industry(models.Model):
     name = models.CharField(max_length=250, verbose_name='name', null=True)
     title = models.CharField(max_length=250, verbose_name='title', null=True)
     description = RichTextField()
-    short_description = models.TextField(null=True, verbose_name='short_description')
+    short_description = RichTextField()
     banner = models.ImageField(upload_to='public/images/industries/industries', verbose_name='banner', null=True)
     alt = models.CharField(max_length=200, verbose_name='alt')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -16,5 +16,5 @@ class Industry(models.Model):
 
     def url(self, short=False):
         if short is False:
-            return static + self.img.url[7:]
-        return self.img.url[7:]
+            return static + self.banner.url[7:]
+        return self.banner.url[7:]

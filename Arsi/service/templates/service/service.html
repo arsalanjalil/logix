@@ -1,48 +1,88 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-	<!-- Start Page Title Area -->
-	<div class="page-title-area item-bg2" style="background-image: url({% static '' %}/images/page-title-bg-2.jpg);">
-		<div class="d-table">
-			<div class="d-table-cell">
-				<div class="container">
-					<div class="page-title-content">
-						<h2>Services</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li>Services</li>
-						</ul>
+
+        <!-- Start Page Title -->
+        <div class="page-title-area">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="section-title">
+						<h2>{{service.name}}</h2>
+						<div class="bar"></div>
+						<p>{{service.title}}</p>
 					</div>
-				</div>
+                </div>
 			</div>
-		</div>
-	</div>
-	<!-- End Page Title Area -->
+			
+			<div class="shape1"><img src="{% static '' %}assets/img/shape1.png" alt="shape"></div>
+			<div class="shape2 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+			<div class="shape3"><img src="{% static '' %}assets/img/shape3.svg" alt="shape"></div>
+			<div class="shape4"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape5"><img src="{% static '' %}assets/img/shape5.png" alt="shape"></div>
+			<div class="shape6 rotateme"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape7"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+        </div>
+        <!-- End Page Title -->
+        
+        <!-- Start ML Services Area -->
+		{% if service.parent %}
+		<div class="ml-services-area ptb-80">
+			<div class="container">
+                <div class="row">
+					{% for prod in service.product_set.all %}	
+                    <div class="col-lg-4 col-sm-6 col-md-6">
+						<a href="{% url 'show_product' id=prod.id %}">
+							<div class="single-ml-services-box">
+								<div class="image">
+									<img src="{{prod.url}}" alt="image">
+								</div>
+								<h3><a href="{% url 'show_product' id=prod.id %}">{{prod.name}}</a></h3>
+								<p>{{prod.title}}</p>
+							</div>
+						</a>
 
-	<!-- Start Services Section -->
-	<section class="services-section pt-70 pb-100">
-		<div class="container">
-			<div class="row">
-				{% for service in services %}
-				<div class="col-lg-4 col-md-6">
-					<div class="single-services-item">
-						<div class="services-icon">
-							<i class="{{service.icon}}"></i>
-						</div>
-						<h3>{{ service.name}} </h3>
-						<p>{{ service.short_description}}</p>
-						<div class="services-btn-link">
-							<a href="{% url 'show' id=service.id %}" class="services-link">Read More</a>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-
+                    </div>
+					{% endfor %}
+                </div>
 			</div>
+
+			<div class="shape1"><img src="{% static '' %}assets/img/shape1.png" alt="shape"></div>
+			<div class="shape2 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+			<div class="shape3"><img src="{% static '' %}assets/img/shape3.svg" alt="shape"></div>
+			<div class="shape4"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape6 rotateme"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape7"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
 		</div>
-	</section>
-	<!-- End Services Section -->
+		{% else %}
+		<div class="solutions-area ptb-80">
+			<div class="container">
+                <div class="row">
+					{% for child1 in service.service_set.all %}
+                    <div class="col-lg-4 col-sm-7 col-md-6">
+                        <div class="single-solutions-box">
+                            <div class="icon">
+                                <img src="{{service.url}}" alt="image">
+                            </div>
+                            <h3><a href="{% url 'show_service' id=child1.id %}">{{child1.name}}</a></h3>
+                            <p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            <a href="{% url 'show_service' id=child1.id %}" class="learn-more-btn"><i data-feather="plus-circle"></i> Learn More</a>
+                        </div>
+                    </div>
+					{% endfor %}
+                </div>
+			</div>
 
-
+			<div class="shape1"><img src="{% static '' %}assets/img/shape1.png" alt="shape"></div>
+			<div class="shape2 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+			<div class="shape3"><img src="{% static '' %}assets/img/shape3.svg" alt="shape"></div>
+			<div class="shape4"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape6 rotateme"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape7"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+		</div>
+		{% endif %}
+        <!-- End ML Services Area -->
 
 {% endblock %}

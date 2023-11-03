@@ -1,4 +1,4 @@
-
+{% load static %}
 <section class="footer-area section-padding">
 		<div class="container">
 			<div class="row">
@@ -9,22 +9,12 @@
 						</a>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco consectetur laboris.</p>
 						<ul class="footer-social">
+							  {% for social in socials %}
 							<li>
-								<a href="#"> <i class="fab fa-facebook-f"></i>
-								</a>
+								<a href="{{social.link}}" class="linkedin"><img src="{{social.url}}" style="width: 30px ;height: 29
+								px"></a>
 							</li>
-							<li>
-								<a href="#"> <i class="fab fa-twitter"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#"> <i class="fab fa-pinterest"></i>
-								</a>
-							</li>
-							<li>
-								<a href="#"> <i class="fab fa-linkedin"></i>
-								</a>
-							</li>
+							{% endfor %}
 						</ul>
 					</div>
 				</div>
@@ -34,11 +24,9 @@
 							<h3>Our Services</h3>
 						</div>
 						<ul class="footer-quick-links">
-							<li> <a href="#">IT Solution</a></li>
-							<li> <a href="#">Web Development</a></li>
-							<li> <a href="#">Networking Services</a></li>
-							<li> <a href="#">SEO Optimization</a></li>
-							<li> <a href="#">App Optimization</a></li>
+							{% for service in services %}
+							<li> <a href="{% url 'show' id=service.id %}">{{ service.name}}</a></li>
+							{% endfor %}
 						</ul>
 					</div>
 				</div>
@@ -48,11 +36,11 @@
 							<h3>Quick Links</h3>
 						</div>
 						<ul class="footer-quick-links">
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="projects.html">Case Study</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="privacy-policy.html">Privacy Policy</a></li>
-							<li><a href="terms-condition.html">Terms & Conditions</a></li>
+							<li><a href="{% url 'show_about' %}">About Us</a></li>
+							<li><a href="{% url 'show_contact' %}">Contact Us</a></li>
+
+							<li><a href="{% url 'show_blog' %}" >Blog</a></li>
+
 						</ul>
 					</div>
 				</div>
@@ -70,12 +58,7 @@
 						<div class="footer-info-contact">
 							<span><strong>Address:</strong> 4035 Heavens, Los Angeles, California</span>
 						</div>
-						<!-- Start Subscribe Area -->
-						<form class="newsletter-form">
-							<input type="email" class="input-newsletter" placeholder="Enter Your Email" name="EMAIL" required autocomplete="off">
-							<button class="default-btn" type="submit">Subscribe <span></span></button>
-						</form>
-						<!-- End Subscribe Area -->
+
 					</div>
 				</div>
 			</div>

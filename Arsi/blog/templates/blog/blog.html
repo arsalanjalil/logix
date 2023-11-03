@@ -1,69 +1,196 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-	<!-- Start Page Title Area -->
-	<div class="page-title-area item-bg3" style="background-image: url({% static '' %}/images/page-title-bg-2.jpg);">
-		<div class="d-table">
-			<div class="d-table-cell">
-				<div class="container">
-					<div class="page-title-content">
-						<h2>Blog</h2>
-						<ul>
-							<li><a href="{% url 'home' %}">Home</a>
-							</li>
-							<li>Blog</li>
-						</ul>
-					</div>
-				</div>
+	     <!-- Start Page Title -->
+		 <div class="page-title-area">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="container">
+                        <h2>Blog Contents</h2>
+						<h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</h3>
+                    </div>
+                </div>
 			</div>
-		</div>
-	</div>
-	<!-- End Page Title Area -->
+			
+			<div class="shape1"><img src="{% static '' %}assets/img/shape1.png" alt="shape"></div>
+			<div class="shape2 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+			<div class="shape3"><img src="{% static '' %}assets/img/shape3.svg" alt="shape"></div>
+			<div class="shape4"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape5"><img src="{% static '' %}assets/img/shape5.png" alt="shape"></div>
+			<div class="shape6 rotateme"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape7"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+        </div>
+        <!-- End Page Title -->
+        
+        <!-- Start Blog Area -->
+		<div class="blog-area ptb-80">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-6">
+						<div class="single-blog-post">
+							<div class="blog-image">
+								<a href="{% url 'show_blog_single'  id=1 %}">
+									<img src="{% static '' %}assets/img/blog-image/1.jpg" alt="image">
+								</a>
 
-	<!-- Start Blog Section -->
-	<section class="blog-section section-padding">
-		<div class="container">
-			<div class="row">
-				{% for blog in blogs %}
-				<div class="col-lg-4 col-md-6">
-					<div class="blog-item">
-						<div class="blog-image">
-							<a href="single-blog.html">
-								<img src="{{ blog.url}}" alt="{{ blog.alt}}">
-							</a>
-						</div>
-						<div class="single-blog-item">
-							<ul class="blog-list">
-								<li>
-									<a href="#"> <i class="fa fa-user-alt"></i> Author</a>
-								</li>
-								<li>
-									<a href="#"> <i class="fas fa-calendar-week"></i>{{ blog.show_date}}</a>
-								</li>
-							</ul>
-							<div class="blog-content">
-								<h3>
-                                    <a href="single-blog.html">
-										{{ blog.title}}
-                                    </a>
-                                </h3>
-								<p>{{ blog.short_description}}</p>
-								<div class="blog-btn"><a href="{% url 'show_blog' id=blog.id %}" class="default-btn blog-btn-one">Continue Reading <span></span></a></div>
+								<div class="date">
+									<i data-feather="calendar"></i> March 15, 2019
+								</div>
+							</div>
+
+							<div class="blog-post-content">
+								<h3><a href="{% url 'show_blog_single'  id=1 %}">The security risks of changing package owners</a></h3>
+
+								<span>by <a href="blog-1.html">admin</a></span>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+								<a href="{% url 'show_blog_single'  id=1 %}" class="read-more-btn">Read More <i data-feather="arrow-right"></i> </a>
 							</div>
 						</div>
 					</div>
-				</div>
-				{% endfor %}
-				<div class="col-lg-12 col-md-12">
-					<div class="pagination-area"> <a href="#" class="prev page-numbers"><i class="fas fa-angle-left"></i></a>
-						<a href="#" class="page-numbers">1</a>
-						<span class="page-numbers current" aria-current="page">2</span>
-						<a href="#" class="page-numbers">3</a>
-						<a href="#" class="page-numbers">4</a>
-						<a href="#" class="next page-numbers"><i class="fas fa-angle-right"></i></a>
+
+					<div class="col-lg-4 col-md-6">
+						<div class="single-blog-post">
+							<div class="blog-image">
+								<a href="{% url 'show_blog_single'  id=1 %}">
+									<img src="{% static '' %}assets/img/blog-image/2.jpg" alt="image">
+								</a>
+
+								<div class="date">
+									<i data-feather="calendar"></i> March 17, 2019
+								</div>
+							</div>
+
+							<div class="blog-post-content">
+								<h3><a href="{% url 'show_blog_single'  id=1 %}">Tips to Protecting Your Business and Family</a></h3>
+
+								<span>by <a href="blog-1.html">smith</a></span>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+								<a href="{% url 'show_blog_single'  id=1 %}" class="read-more-btn">Read More <i data-feather="arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6">
+						<div class="single-blog-post">
+							<div class="blog-image">
+								<a href="{% url 'show_blog_single'  id=1 %}">
+									<img src="{% static '' %}assets/img/blog-image/3.jpg" alt="image">
+								</a>
+
+								<div class="date">
+									<i data-feather="calendar"></i> March 19, 2019
+								</div>
+							</div>
+
+							<div class="blog-post-content">
+								<h3><a href="{% url 'show_blog_single'  id=1 %}">Protect Your Workplace from Cyber Attacks</a></h3>
+
+								<span>by <a href="blog-1.html">john</a></span>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+								<a href="{% url 'show_blog_single'  id=1 %}" class="read-more-btn">Read More <i data-feather="arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-4 col-md-6">
+						<div class="single-blog-post">
+							<div class="blog-image">
+								<a href="{% url 'show_blog_single'  id=1 %}">
+									<img src="{% static '' %}assets/img/blog-image/4.jpg" alt="image">
+								</a>
+
+								<div class="date">
+									<i data-feather="calendar"></i> March 15, 2019
+								</div>
+							</div>
+
+							<div class="blog-post-content">
+								<h3><a href="{% url 'show_blog_single'  id=1 %}">The security risks of changing package owners</a></h3>
+
+								<span>by <a href="blog-1.html">admin</a></span>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+								<a href="{% url 'show_blog_single'  id=1 %}" class="read-more-btn">Read More <i data-feather="arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6">
+						<div class="single-blog-post">
+							<div class="blog-image">
+								<a href="{% url 'show_blog_single'  id=1 %}">
+									<img src="{% static '' %}assets/img/blog-image/5.jpg" alt="image">
+								</a>
+
+								<div class="date">
+									<i data-feather="calendar"></i> March 17, 2019
+								</div>
+							</div>
+
+							<div class="blog-post-content">
+								<h3><a href="{% url 'show_blog_single'  id=1 %}">Tips to Protecting Your Business and Family</a></h3>
+
+								<span>by <a href="blog-1.html">smith</a></span>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+								<a href="{% url 'show_blog_single'  id=1 %}" class="read-more-btn">Read More <i data-feather="arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 col-md-6">
+						<div class="single-blog-post">
+							<div class="blog-image">
+								<a href="{% url 'show_blog_single'  id=1 %}">
+									<img src="{% static '' %}assets/img/blog-image/6.jpg" alt="image">
+								</a>
+
+								<div class="date">
+									<i data-feather="calendar"></i> March 19, 2019
+								</div>
+							</div>
+
+							<div class="blog-post-content">
+								<h3><a href="{% url 'show_blog_single'  id=1 %}">Protect Your Workplace from Cyber Attacks</a></h3>
+
+								<span>by <a href="blog-1.html">john</a></span>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+								<a href="{% url 'show_blog_single'  id=1 %}" class="read-more-btn">Read More <i data-feather="arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-12 col-md-12">
+						<div class="pagination-area">
+							<nav aria-label="Page navigation">
+								<ul class="pagination justify-content-center">
+								   
+									<li class="page-item"><a class="page-link" href="blog-1.html">Prev</a></li>
+									
+									<li class="page-item active"><a class="page-link" href="blog-1.html">1</a></li>
+									
+									<li class="page-item"><a class="page-link" href="blog-1.html">2</a></li>
+									
+									<li class="page-item"><a class="page-link" href="blog-1.html">3</a></li>
+									
+									<li class="page-item"><a class="page-link" href="blog-1.html">Next</a></li>
+								</ul>
+							</nav>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+		<!-- End Blog Area -->
 {% endblock %}

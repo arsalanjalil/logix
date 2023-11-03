@@ -1,10 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- Start Page Title Area -->
+{% for industry in industries %}
 
-</body>
-</html>
+	<div class="page-title-area item-bg2" style="background-image: url({{ industry.url}});">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="container">
+					<div class="page-title-content">
+						<h2>{{industry.name}}</h2>
+						<ul>
+							<li>{{industry.title}}</li>
+						</ul>
+					</div>
+				</div>
+		</div>
+	</div>
+	<!-- End Page Title Area -->
+	<!-- Start Overview Section -->
+	<section class="overview-section section-padding">
+		<div class="container">
+			<div class="row align-items-center">
+<!--				<div class="col-lg-6">-->
+<!--					<div class="overview-content">-->
+
+						<p>{{ industry.short_description|safe}}</p>
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-6">-->
+<!--&lt;!&ndash;					<div class="overview-image-2">&ndash;&gt;-->
+<!--&lt;!&ndash;						<img src="{% static '' %}/images/choose-1.png" alt="image">&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--				</div>-->
+			</div>
+		</div>
+	</section>
+	<!-- End Overview Section -->
+	<!-- Start Services Section -->
+<section class="services-section pt-70 pb-100">
+		<div class="container">
+			<div class="row">
+				{% for service in services %}
+				<div class="col-lg-4 col-md-6">
+					<div class="single-services-item">
+						<div class="services-icon">
+							<i class="{{service.icon}}"></i>
+						</div>
+						<h3>{{ service.name}} </h3>
+						<p>{{ service.short_description}}</p>
+						<div class="services-btn-link">
+							<a href="{% url 'show' id=service.id %}" class="services-link">Read More</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+		</div>
+	</section>
+<section class="blog-section section-padding">
+		<div class="container">
+			<div class="row">
+				{% for solution in solutions %}
+				<div class="col-lg-4 col-md-6">
+					<div class="blog-item">
+						<div class="blog-image">
+							<a href="single-blog.html">
+								<img src="{{ solution.url}}" alt="{{ solution.alt}}">
+							</a>
+						</div>
+						<div class="single-blog-item">
+
+							<div class="blog-content">
+								<h3>
+                                    <a href="single-blog.html">
+										{{ solution.title}}
+                                    </a>
+                                </h3>
+								<p>{{ solution.description}}</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- End Overview Section -->
+<section class="overview-section section-padding">
+		<div class="container">
+			<div class="row align-items-center">
+<!--				<div class="col-lg-6">-->
+<!--					<div class="overview-content">-->
+
+						<p>{{ industry.description|safe}}</p>
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-6">-->
+<!--&lt;!&ndash;					<div class="overview-image-2">&ndash;&gt;-->
+<!--&lt;!&ndash;						<img src="{% static '' %}/images/choose-1.png" alt="image">&ndash;&gt;-->
+<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+<!--				</div>-->
+			</div>
+		</div>
+	</section>
+{% endfor %}
+{% endblock %}

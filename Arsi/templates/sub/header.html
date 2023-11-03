@@ -1,10 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
+<header id="header" class="headroom">
+	<div class="startp-responsive-nav">
+		<div class="container">
+			<div class="startp-responsive-menu">
+				<div class="logo black-logo">
+					<a href="{% url 'home' %}">
+						<img src="{% static '' %}assets/img/logo.png" alt="logo">
+					</a>
+				</div>
+				<div class="logo white-logo">
+					<a href="{% url 'home' %}">
+						<img src="{% static '' %}assets/img/white-logo.png" alt="logo">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-</body>
-</html>
+	<div class="startp-nav">
+		<div class="container">
+			<nav class="navbar navbar-expand-md navbar-light">
+				<a class="navbar-brand black-logo" href="{% url 'home' %}"><img src="{% static '' %}assets/img/logo.png" alt="logo"></a>
+				<a class="navbar-brand white-logo" href="{% url 'home' %}"><img src="{% static '' %}assets/img/white-logo.png" alt="logo"></a>
+
+				<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+					<ul class="navbar-nav nav ml-auto">
+						<li class="nav-item"><a href="#" class="nav-link">Products & Services<i data-feather="chevron-down"></i></a>
+							<ul class="dropdown_menu">
+
+								{% for service in services %}
+									<li class="nav-item"><a href="#" class="nav-link">{{service.name}}<i data-feather="chevron-right"></i></a>
+										<ul class="dropdown_menu">
+											{% for child1 in service.service_set.all %}
+											
+											<li class="nav-item"><a href="{% url 'show_service' id=child1.id %}" class="nav-link">{{child1.name}}</a></li>
+											
+											{% endfor %}
+										</ul>
+									</li>
+								
+
+								{% endfor %}
+
+
+							</ul>
+						</li>
+
+						<li class="nav-item"><a href="{% url 'show_blog' %}" class="nav-link">Blog</a></li>
+						
+						<li class="nav-item"><a href="#" class="nav-link">Solutions <i data-feather="chevron-down"></i></a>
+							<ul class="dropdown_menu">
+								
+
+
+								<li class="nav-item"><a href="{% url 'all_solution' %}" class="nav-link">All Solutions</a></li>
+						
+                            {% for solution in solutions %}
+							
+								<li class="nav-item"><a href="{% url 'show_solution' id=solution.id %}" class="nav-link">{{solution.name}}</a></li>
+							{% endfor %}		
+						
+							</ul>
+						</li>
+						
+					
+
+						<li class="nav-item"><a href="#" class="nav-link">About <i data-feather="chevron-down"></i></a>
+							<ul class="dropdown_menu">
+		
+								<li class="nav-item"><a href="{% url 'show_about' %}" class="nav-link">About Us</a></li>
+								<li class="nav-item"><a href="{% url 'policy' %}" class="nav-link">Privacy Policy</a></li>
+								<li class="nav-item"><a href="blog-3.html" class="nav-link">Terms & Conditions</a></li>
+								<li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+								<li class="nav-item"><a href="blog-3.html" class="nav-link">FAQ</a></li>
+								
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class="others-option">
+					
+					<a href="{% url 'show_contact' %}" class="btn btn-light">Contact</a>
+					<a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+				</div>
+			</nav>
+		</div> 
+	</div>
+
+	<div class="others-option-for-responsive">
+		<div class="container">
+			<div class="dot-menu">
+				<div class="inner">
+					<div class="circle circle-one"></div>
+					<div class="circle circle-two"></div>
+					<div class="circle circle-three"></div>
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="option-inner">
+					<div class="others-option">
+						<a href="cart.html" class="cart-wrapper-btn"><i data-feather="shopping-cart"></i><span>0</span></a>
+						<a href="contact.html" class="btn btn-light">Support</a>
+						<a href="login.html" class="btn btn-primary">Login</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
