@@ -12,6 +12,9 @@ class HeaderHome(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        app_label  = 'Header_Home'
+
     def url(self, short=False):
         if short is False:
             return static + self.img.url[7:]
@@ -23,6 +26,9 @@ class PublicSolution(models.Model):
     description = models.TextField(verbose_name='description')
     img = models.ImageField(upload_to='public/images/home/publicSolution', verbose_name='img')
     alt = models.CharField(max_length=200, verbose_name='alt')
+
+    class Meta:
+        app_label  = 'Public_Solution'
 
     def url(self, short=False):
         if short is False:
@@ -45,6 +51,10 @@ class Client(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
+    class Meta:
+        app_label  = 'Client'
+
     def url(self, short=False):
         if short is False:
             return static + self.img.url[7:]
@@ -54,6 +64,10 @@ class Client(models.Model):
 class Social(models.Model):
     link = models.CharField(max_length=250,verbose_name='link')
     img = models.ImageField(upload_to='public/images/home/social',verbose_name='image')
+
+
+    class Meta:
+        app_label  = 'Social'
 
     def url(self, short=False):
         if short is False:
