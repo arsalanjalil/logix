@@ -14,6 +14,9 @@ class Industry(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        app_label  = 'industry'
+
     def url(self, short=False):
         if short is False:
             return static + self.banner.url[7:]

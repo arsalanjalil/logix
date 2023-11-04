@@ -12,8 +12,8 @@ class HeaderHome(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        app_label  = 'Header_Home'
+#    class Meta:
+#       app_label  = 'HeaderHome'
 
     def url(self, short=False):
         if short is False:
@@ -27,8 +27,8 @@ class PublicSolution(models.Model):
     img = models.ImageField(upload_to='public/images/home/publicSolution', verbose_name='img')
     alt = models.CharField(max_length=200, verbose_name='alt')
 
-    class Meta:
-        app_label  = 'Public_Solution'
+#    class Meta:
+#        app_label  = 'PublicSolution'
 
     def url(self, short=False):
         if short is False:
@@ -52,8 +52,8 @@ class Client(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-    class Meta:
-        app_label  = 'Client'
+#    class Meta:
+#        app_label  = 'Client'
 
     def url(self, short=False):
         if short is False:
@@ -66,8 +66,8 @@ class Social(models.Model):
     img = models.ImageField(upload_to='public/images/home/social',verbose_name='image')
 
 
-    class Meta:
-        app_label  = 'Social'
+#    class Meta:
+#        app_label  = 'Social'
 
     def url(self, short=False):
         if short is False:

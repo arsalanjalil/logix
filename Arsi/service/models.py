@@ -6,6 +6,7 @@ from industry.models import Industry
 # Create your models here.
 
 
+
 class Service(models.Model):
     name = models.CharField(max_length=250, verbose_name='name',null=True)
     title = models.CharField(max_length=250, verbose_name='title',null=True)
@@ -19,6 +20,10 @@ class Service(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+
+
     def url(self, short=False):
         if short is False:
             return static + self.img.url[7:]
@@ -28,6 +33,8 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ['name', 'title']
     search_fields = ('name',)
     autocomplete_fields = ['parent']
+
+
 
     def get_form(self, request, obj=None, change=False, **kwargs):
         form = super().get_form(request, obj, change, **kwargs)
@@ -51,6 +58,9 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
+
+
     def __str__(self):
         return self.service.name
 
@@ -69,6 +79,10 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name
+
+
     def url(self, short=False):
         if short is False:
             return static + self.img.url[7:]
@@ -80,13 +94,26 @@ class Property(models.Model):
     product = models.ForeignKey(Product , on_delete=models.CASCADE)
     svg = models.TextField()
 
+    def __str__(self):
+        return self.name
+
+
 class Feature(models.Model):
     name = models.CharField(max_length=250, verbose_name='name',null=True)
     title = models.TextField() 
     img = models.ImageField(upload_to='public/images/services/service',verbose_name='img',null=True)
     product = models.ForeignKey(Product , on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
+
 class Detaile(models.Model):
     detail = models.CharField(max_length=250, verbose_name='name',null=True)   
     svg = models.TextField()
     feature = models.ForeignKey(Feature , on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+ 
+
