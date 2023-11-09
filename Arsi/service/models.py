@@ -70,7 +70,7 @@ class Order(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=250, verbose_name='name',null=True)
-    title = models.CharField(max_length=250, verbose_name='title',null=True)
+    title = models.CharField(max_length=250, verbose_name='title',null=True,blank=True)
     description = RichTextField()
     short_description = models.TextField(null=True, verbose_name='short_description')
     service = models.ForeignKey(Service , on_delete=models.CASCADE,verbose_name='service_id')
@@ -87,7 +87,12 @@ class Product(models.Model):
         if short is False:
             return static + self.img.url[7:]
         return self.img.url[7:]
-    
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['name', 'title',]
+    search_fields = ('name',)
+
 class Property(models.Model):
     name = models.CharField(max_length=250, verbose_name='name',null=True)
     title = models.TextField() 
