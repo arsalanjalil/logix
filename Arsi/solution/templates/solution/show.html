@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
         <!-- Start Page Title -->
-        <div class="page-title-area">
+		{% for sol in solutions %}
+        <div class="page-title-area" style="background-image: url({{sol.url}});"width="auto" >
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
@@ -92,6 +93,7 @@
 				</div>
             </div>
         </div>
+		{% endfor %}
         <!-- End Features Details Area -->
 
 

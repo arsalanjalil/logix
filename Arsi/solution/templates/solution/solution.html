@@ -29,68 +29,15 @@
 				{% for sol in solutions %}
 				<div class="col-lg-4 col-sm-6 col-md-6">
 					<div class="agency-services-box">
-						<img src="{% static '' %}assets/img/agency-image/services-img1.jpg" alt="image">
+						<img src="{{sol.url}}" alt="{{sol.alt}}">
 
 						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">{{sol.name}}s</a></h3>
+							<h3><a href="{% url 'show_solution' id=1 %}">{{sol.name}}</a></h3>
 							<a href="{% url 'show_solution' id=sol.id %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
 						</div>
 					</div>
 				</div>
 				{% endfor %}
-				<div class="col-lg-4 col-sm-6 col-md-6">
-					<div class="agency-services-box">
-						<img src="{% static '' %}assets/img/agency-image/services-img2.jpg" alt="image">
-
-						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">Software Engineers</a></h3>
-							<a href="{% url 'show_solution' id=1 %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-sm-6 col-md-6">
-					<div class="agency-services-box">
-						<img src="{% static '' %}assets/img/agency-image/services-img3.jpg" alt="image">
-
-						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">Web Development</a></h3>
-							<a href="{% url 'show_solution' id=1 %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6 col-md-6">
-					<div class="agency-services-box">
-						<img src="{% static '' %}assets/img/agency-image/services-img4.jpg" alt="image">
-
-						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">SEO & Content</a></h3>
-							<a href="{% url 'show_solution' id=1 %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-sm-6 col-md-6">
-					<div class="agency-services-box">
-						<img src="{% static '' %}assets/img/agency-image/services-img5.jpg" alt="image">
-
-						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">Digital Marketing</a></h3>
-							<a href="{% url 'show_solution' id=1 %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-sm-6 col-md-6">
-					<div class="agency-services-box">
-						<img src="{% static '' %}assets/img/agency-image/services-img6.jpg" alt="image">
-
-						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">Data Analysts</a></h3>
-							<a href="{% url 'show_solution' id=1 %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 

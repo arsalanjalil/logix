@@ -9,4 +9,6 @@ def all(request):
     return render(request,'solution/solution.html',context)
 
 def show(request,id):
-        return render(request,'solution/show.html')
+        solutions = Solution.objects.filter(id=id)
+        context = {'solutions': solutions}
+        return render(request,'solution/show.html',context)
