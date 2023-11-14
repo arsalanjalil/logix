@@ -32,7 +32,7 @@
 						<img src="{% static '' %}assets/img/agency-image/services-img1.jpg" alt="image">
 
 						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">IT Professionals</a></h3>
+							<h3><a href="{% url 'show_solution' id=1 %}">{{sol.name}}s</a></h3>
 							<a href="{% url 'show_solution' id=sol.id %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
 						</div>
 					</div>

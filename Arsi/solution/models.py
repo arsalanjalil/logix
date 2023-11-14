@@ -11,7 +11,7 @@ class Solution(models.Model):
     description = RichTextField()
     long_description = RichTextField(verbose_name='Long Description',null=True,default='')
     industry = models.ForeignKey(Industry, on_delete=models.CASCADE, null=True,blank=True)
-
+    img = models.ImageField(upload_to='public/images/solution/solutions', verbose_name='banner', null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
