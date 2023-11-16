@@ -20,7 +20,9 @@ class Solution(models.Model):
             return static + self.img.url[7:]
         return self.img.url[7:]
 
-
+    def __str__(self):
+        return self.name
+        
 class Feature(models.Model):
     feature = models.CharField(max_length=250, verbose_name="name")
     solution = models.ForeignKey(Solution, on_delete=models.CASCADE, null=True,blank=True)
