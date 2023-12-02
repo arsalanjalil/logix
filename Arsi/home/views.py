@@ -11,13 +11,14 @@ from django.http import HttpResponse
 def home(request):
     count = 0
     headers = HeaderHome.objects.all()
-    services = Service.objects.all()
+    services = Service.objects.filter(parent_id="0")
     solutions = Solution.objects.all()
     publicSolutions = PublicSolution.objects.all()
     clients = Client.objects.all()
     blogs = Blog.objects.all()
     context = {'headers':headers ,'services':services,'solutions':solutions,'publicSolutions':publicSolutions,
                'clients':clients,'blogs':blogs}
+
     return render(request, template_name='home/home.html',context=context)
 
 def addsdcf(request):

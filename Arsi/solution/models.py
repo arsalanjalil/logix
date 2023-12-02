@@ -15,7 +15,14 @@ class Solution(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def url(self, short=False):
+        if short is False:
+            return static + self.img.url[7:]
+        return self.img.url[7:]
 
+    def __str__(self):
+        return self.name
+        
 class Feature(models.Model):
     feature = models.CharField(max_length=250, verbose_name="name")
     solution = models.ForeignKey(Solution, on_delete=models.CASCADE, null=True,blank=True)

@@ -1,12 +1,13 @@
 from django.db import models
 from api_store.settings import STATIC_URL as static
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
 class HeaderHome(models.Model):
     name = models.CharField(max_length=200, verbose_name='name')
     title = models.CharField(max_length=250,verbose_name='title')
-    description = models.TextField(verbose_name='description')
+    description = RichTextField()
     img = models.ImageField(upload_to='public/images/home/headers',verbose_name='img')
     alt = models.CharField(max_length=200, verbose_name='alt')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -19,6 +20,7 @@ class HeaderHome(models.Model):
         if short is False:
             return static + self.img.url[7:]
         return self.img.url[7:]
+
 
 
 class PublicSolution(models.Model):
@@ -46,7 +48,7 @@ class Client(models.Model):
     field = models.CharField(max_length=250,verbose_name='field')
     comment = models.TextField(verbose_name='comment')
     like = models.IntegerField(default=0, verbose_name='score')
-    img = models.ImageField(upload_to='public/images/home/headers',verbose_name='img')
+    img = models.ImageField(upload_to='public/images/home/client',verbose_name='img')
     alt = models.CharField(max_length=200, verbose_name='alt')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -59,7 +61,6 @@ class Client(models.Model):
         if short is False:
             return static + self.img.url[7:]
         return self.img.url[7:]
-
 
 class Social(models.Model):
     link = models.CharField(max_length=250,verbose_name='link')

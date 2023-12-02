@@ -2,11 +2,13 @@
 {% load static %}
 {% block content %}
         <!-- Start Page Title -->
-        <div class="page-title-area">
+		{% for sol in solutions %}
+        <div class="page-title-area" width="auto" >
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
-                        <h2>Features Details</h2>
+                        <h2>Elevate Your Efficiency: Office & Business Process Automation Solutions</h2>
+						<p>Streamline your workflow, boost productivity, and unlock the full potential of your business with our cutting-edge Office & Business Process Automation solutions. From task optimization to seamless document management, experience a new era of efficiency that empowers your team to focus on what matters most—innovation and growth.</p>
                     </div>
                 </div>
 			</div>
@@ -92,6 +94,7 @@
 				</div>
             </div>
         </div>
+		{% endfor %}
         <!-- End Features Details Area -->
 
 
