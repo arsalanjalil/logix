@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'contact',
     'django_seed',
     'industry',
-    'api_store'	
+    'api_store',
+    'faicon'
 ]
 
 MIDDLEWARE = [
@@ -131,6 +132,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
