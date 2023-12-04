@@ -3,13 +3,13 @@
 {% block content %}
 
         <!-- Start Page Title -->
-        <div class="page-title-area">
+        <!-- <div class="page-title-area">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="section-title">
 						<h2>{{service.name}}</h2>
 						<div class="bar"></div>
-						<p>{{service.title}}</p>
+						<p>{{service.description|safe}}</p>
 					</div>
                 </div>
 			</div>
@@ -22,6 +22,30 @@
 			<div class="shape6 rotateme"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
 			<div class="shape7"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
 			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+        </div> -->
+
+		<div class="iot-main-banner">
+            <div class="container">
+                <div class="iot-banner-content">
+                    <span>Get it! LOGIX provides</span>
+                    <h2>{{service.name}}</h2>
+                    <p>{{service.short_description}}</p>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="iot-banner-image">
+                   
+					<img src="{% static '' %}assets/img/iot-banner-image/1.png" class="wow fadeInUp" data-wow-delay="0.8s" alt="image" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;opacity: 0.1;">
+                    <img width="400" src="{{service.url}}" class="wow zoomIn" alt="image" style="visibility: visible; animation-name: zoomIn;">
+                </div>
+
+                <div class="animate-border">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
         <!-- End Page Title -->
         
@@ -84,6 +108,139 @@
 			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
 		</div>
 		{% endif %}
+
+		<div class="features-area ptb-80 bg-f9f6f6">
+			<div class="container">
+				<div class="section-title">
+					<h2>Our Features</h2>
+					<div class="bar"></div>
+					<p>{{service.title}}</p>
+				</div>
+
+				<div class="row">
+					{% for O in service.ourfeature_set.all %}
+					<div class="col-lg-6 col-md-6 col-sm-6" >
+						<div class="single-features">
+							<div class="icon" style="color: rgb(28, 32, 32); background-color:{{O.color}};">
+								<i class="fa fa-{{O.icon.icon}}"></i>
+								
+							</div>
+
+							
+							<p>{{O.name}}<br></p>
+						</div>
+					</div>
+					{% endfor %}
+				
+				</div>
+			</div>
+		</div>
+
         <!-- End ML Services Area -->
+		{% for feature in service.feature_set.all %}
+		<div class="features-area-two ptb-80 {% if forloop.counter0|divisibleby:'2'  %}{% endif %}" >
+			<div class="container">
+				<div class="row h-100 justify-content-center align-items-center">
+					
+					{% if forloop.counter0|divisibleby:'2'  %}
+					<div class="col-lg-6 col-md-12 services-content">
+						<div class="section-title">
+						
+						
+							<h2>{{feature.name}}</h2>
+							
+							<div class="bar"></div>
+							<p>{{feature.title}}</p>
+						</div>
+
+						<div class="row">
+							{% for d in feature.detaile_set.all %}
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="box">
+								    <i style="color: rgb(8, 252, 8);" class="fa fa-{{d.icon.icon}}"></i>	
+								    {{d.detail}}
+								</div>
+							</div>
+							{% endfor %}
+							
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-12 services-{% if forloop.counter0|divisibleby:'2'  %}right{% else %}left{% endif %}-image">
+						<img width="300" src="{{feature.url}}" class="wow fadeInDown" data-wow-delay="0.6s" alt="book-self" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInDown;">
+						<!-- <img src="{% static '' %}assets/img/services-right-image/box.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="box" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/chair.png" class="wow fadeInLeft" data-wow-delay="0.6s" alt="chair" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/cloud.png" class="wow zoomIn" data-wow-delay="0.6s" alt="cloud" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/cup.png" class="wow bounceIn" data-wow-delay="0.6s" alt="cup" style="visibility: visible; animation-delay: 0.6s; animation-name: bounceIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/flower-top.png" class="wow fadeInDown" data-wow-delay="0.6s" alt="flower" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInDown;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/head-phone.png" class="wow zoomIn" data-wow-delay="0.6s" alt="head-phone" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/monitor.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="monitor" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/mug.png" class="wow rotateIn" data-wow-delay="0.6s" alt="mug" style="visibility: visible; animation-delay: 0.6s; animation-name: rotateIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/table.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="table" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/tissue.png" class="wow zoomIn" data-wow-delay="0.6s" alt="tissue" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/water-bottle.png" class="wow zoomIn" data-wow-delay="0.6s" alt="water-bottle" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/wifi.png" class="wow fadeInLeft" data-wow-delay="0.6s" alt="wifi" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;"> -->
+						<img src="{% static '' %}assets/img/services-right-image/cercle-shape.png" class="bg-image rotateme" alt="shape">
+						
+						<img src="assets/img/services-right-image/main-pic.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="main-pic" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+					</div>		
+					{% else %}
+
+
+					<div class="col-lg-6 col-md-12 services-{% if forloop.counter0|divisibleby:'2'  %}right{% else %}left{% endif %}-image">
+						<img width="300" src="{{feature.url}}" class="wow fadeInDown" data-wow-delay="0.6s" alt="book-self" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInDown;">
+						<!-- <img src="{% static '' %}assets/img/services-right-image/box.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="box" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/chair.png" class="wow fadeInLeft" data-wow-delay="0.6s" alt="chair" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/cloud.png" class="wow zoomIn" data-wow-delay="0.6s" alt="cloud" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/cup.png" class="wow bounceIn" data-wow-delay="0.6s" alt="cup" style="visibility: visible; animation-delay: 0.6s; animation-name: bounceIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/flower-top.png" class="wow fadeInDown" data-wow-delay="0.6s" alt="flower" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInDown;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/head-phone.png" class="wow zoomIn" data-wow-delay="0.6s" alt="head-phone" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/monitor.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="monitor" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/mug.png" class="wow rotateIn" data-wow-delay="0.6s" alt="mug" style="visibility: visible; animation-delay: 0.6s; animation-name: rotateIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/table.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="table" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/tissue.png" class="wow zoomIn" data-wow-delay="0.6s" alt="tissue" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/water-bottle.png" class="wow zoomIn" data-wow-delay="0.6s" alt="water-bottle" style="visibility: visible; animation-delay: 0.6s; animation-name: zoomIn;"> -->
+						<!-- <img src="{% static '' %}assets/img/services-right-image/wifi.png" class="wow fadeInLeft" data-wow-delay="0.6s" alt="wifi" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;"> -->
+						<img src="{% static '' %}assets/img/services-right-image/cercle-shape.png" class="bg-image rotateme" alt="shape">
+						
+						<img src="assets/img/services-right-image/main-pic.png" class="wow fadeInUp" data-wow-delay="0.6s" alt="main-pic" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+					</div>
+
+					<div class="col-lg-6 col-md-12 services-content">
+						<div class="section-title">
+						
+				
+							<h2>{{feature.name}}</h2>
+							
+							<div class="bar"></div>
+							<p>{{feature.title}}</p>
+						</div>
+
+						<div class="row">
+							{% for d in feature.detaile_set.all %}
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div class="box">
+								    <i style="color: rgb(8, 252, 8);" class="fa fa-{{d.icon.icon}}"></i>	
+								    {{d.detail}}
+								</div>
+							</div>
+							{% endfor %}
+							
+						</div>
+					</div>
+					{% endif %}
+
+
+
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		{% endfor %}
 
 {% endblock %}

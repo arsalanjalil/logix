@@ -13,4 +13,5 @@ urlpatterns = [
     path('solution/', include('solution.urls')),
     path("accounts/", include("django.contrib.auth.urls")),  # new register
     path("user/sign-up", views.sign_up , name='user_register'), 
+    path('faicon/', include('faicon.urls')),
 ]

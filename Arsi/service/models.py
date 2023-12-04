@@ -4,7 +4,10 @@ from ckeditor.fields import RichTextField
 from django.contrib import admin
 from industry.models import Industry
 # Create your models here.
+from faicon.fields import FAIconField
 
+
+import random
 
 
 class Service(models.Model):
@@ -15,7 +18,7 @@ class Service(models.Model):
     description = RichTextField()
     short_description = models.TextField(null=True, verbose_name='short_description')
     img = models.ImageField(upload_to='public/images/services/service',verbose_name='img',null=True)
-    icon = models.CharField(max_length=200, null=True, verbose_name='icon')
+    icon = FAIconField(null=True)
     alt = models.CharField(max_length=200, verbose_name='alt')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -107,18 +110,55 @@ class Feature(models.Model):
     name = models.CharField(max_length=250, verbose_name='name',null=True)
     title = models.TextField() 
     img = models.ImageField(upload_to='public/images/services/service',verbose_name='img',null=True)
-    product = models.ForeignKey(Product , on_delete=models.CASCADE)
+    service = models.ForeignKey(Service , on_delete=models.CASCADE,default=0)
 
     def __str__(self):
         return self.name
 
+    def url(self, short=False):
+        if short is False:
+            return static + self.img.url[7:]
+        return self.img.url[7:]
 
 class Detaile(models.Model):
     detail = models.CharField(max_length=250, verbose_name='name',null=True)   
-    svg = models.TextField()
+    icon = FAIconField()
     feature = models.ForeignKey(Feature , on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.detail
+
+    def showIcon(self):
+        return self.icon.icon_html() 
  
+
+class OurFeature(models.Model):
+    name = models.CharField(max_length=250, verbose_name='name',null=True)
+    icon = FAIconField()
+    service = models.ForeignKey(Service , on_delete=models.CASCADE,default=0)
+
+    def __str__(self):
+        return self.name
+
+    colors = ['#ADFF2F','#7FFF00','#7CFC00','#00FF00','#32CD32','#98FB98',
+    '#90EE90',
+    '#00FA9A',
+    '#00FF7F',
+    '#3CB371',
+    '#2E8B57',
+    '#228B22',
+    '#008000',
+    '#006400',
+    '#9ACD32',
+    '#6B8E23',
+    '#556B2F',
+    '#66CDAA',
+    '#8FBC8F',
+    '#20B2AA',
+    '#008B8B',
+    '#008080']
+
+    def color(self):
+        return random.choice(self.colors)
+
 
