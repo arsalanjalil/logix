@@ -18,7 +18,7 @@ class Service(models.Model):
     description = RichTextField()
     short_description = models.TextField(null=True, verbose_name='short_description')
     img = models.ImageField(upload_to='public/images/services/service',verbose_name='img',null=True)
-    icon = models.CharField(max_length=200, null=True, verbose_name='icon')
+    icon = FAIconField(null=True)
     alt = models.CharField(max_length=200, verbose_name='alt')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

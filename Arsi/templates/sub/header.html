@@ -29,7 +29,11 @@
 							<ul class="dropdown_menu">
 
 								{% for service in services %}
-								<li class="nav-item"><a href="{% url 'show_service' id=service.id %}" class="nav-link">{{service.name}}</a></li>
+								<li class="nav-item">
+									
+									<a href="{% url 'show_service' id=service.id %}" class="nav-link">
+										<i class="fa fa-{{service.icon.icon}}"></i>
+										{{service.name}}</a></li>
 
 								{% endfor %}
 

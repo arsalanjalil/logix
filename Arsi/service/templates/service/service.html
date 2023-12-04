@@ -3,7 +3,7 @@
 {% block content %}
 
         <!-- Start Page Title -->
-        <div class="page-title-area">
+        <!-- <div class="page-title-area">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="section-title">
@@ -22,6 +22,30 @@
 			<div class="shape6 rotateme"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
 			<div class="shape7"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
 			<div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+        </div> -->
+
+		<div class="iot-main-banner">
+            <div class="container">
+                <div class="iot-banner-content">
+                    <span>Get it! LOGIX provides</span>
+                    <h2>{{service.name}}</h2>
+                    <p>{{service.short_description}}</p>
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+
+                <div class="iot-banner-image">
+                   
+					<img src="{% static '' %}assets/img/iot-banner-image/1.png" class="wow fadeInUp" data-wow-delay="0.8s" alt="image" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;opacity: 0.1;">
+                    <img width="400" src="{{service.url}}" class="wow zoomIn" alt="image" style="visibility: visible; animation-name: zoomIn;">
+                </div>
+
+                <div class="animate-border">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
         <!-- End Page Title -->
         
@@ -90,20 +114,20 @@
 				<div class="section-title">
 					<h2>Our Features</h2>
 					<div class="bar"></div>
-					<p>Elevate your operational efficiency and fortify your digital landscape through our comprehensive Managed IT Services & Security offerings.</p>
+					<p>{{service.title}}</p>
 				</div>
 
 				<div class="row">
 					{% for O in service.ourfeature_set.all %}
 					<div class="col-lg-6 col-md-6 col-sm-6" >
-						<div class="single-features" style="height: 120px;">
+						<div class="single-features">
 							<div class="icon" style="color: rgb(28, 32, 32); background-color:{{O.color}};">
 								<i class="fa fa-{{O.icon.icon}}"></i>
 								
 							</div>
 
 							
-							<p>{{O.name}}</p>
+							<p>{{O.name}}<br></p>
 						</div>
 					</div>
 					{% endfor %}
