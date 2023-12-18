@@ -32,7 +32,9 @@
 								<li class="nav-item">
 									
 									<a href="{% url 'show_service' id=service.id %}" class="nav-link">
-										<i class="fa fa-{{service.icon.icon}}"></i>
+										<!-- <i class="fa fa-{{service.icon.icon}}"></i> -->
+										<!-- Please refer: https://github.com/shubhamjain/svg-loader -->
+									
 										{{service.name}}</a></li>
 
 								{% endfor %}

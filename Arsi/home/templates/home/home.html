@@ -124,15 +124,15 @@
         </div>
 
         <div class="row">
-            {% for solution in solutions %}
+            {% for service in services %}
             <div class="col-lg-3 col-sm-6 col-md-6">
                 <div class="single-solutions-box">
                     <div class="icon">
-                        <img src="{{solution.url}}" alt="{{solution.alt}}">
+                        {{ service.icon|safe }}
                     </div>
-                    <h3><a href="#">{{solution.name}}</a></h3>
-                    <p>{{solution.description|safe}}</p>
-                    <a href="{% url 'show_solution' id=solution.id %}"  class="learn-more-btn"><i data-feather="plus-circle"></i> Learn More</a>
+                    <h3><a href="#">{{service.name}}</a></h3>
+                    <p>{{service.title|safe}}</p>
+                    <a href="{% url 'show_service' id=service.id %}"  class="learn-more-btn"><i data-feather="plus-circle"></i> Learn More</a>
                 </div>
             </div>
             {% endfor %}
