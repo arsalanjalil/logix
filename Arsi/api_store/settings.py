@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'django_seed',
     'industry',
     'api_store',
-    'faicon'
+   
 ]
 
 MIDDLEWARE = [

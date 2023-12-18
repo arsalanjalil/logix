@@ -26,6 +26,17 @@ class Solution(models.Model):
 class Feature(models.Model):
     feature = models.CharField(max_length=250, verbose_name="name")
     solution = models.ForeignKey(Solution, on_delete=models.CASCADE, null=True,blank=True)
+    img = models.ImageField(upload_to='public/images/solution/solutions/features', verbose_name='banner', null=True)
+    code = models.TextField(default=" ")
+
+    def url(self, short=False):
+        if short is False:
+            return static + self.img.url[7:]
+        return self.img.url[7:]
+
+    def __str__(self):
+        return self.feature
+    
 
 class Image(models.Model):
     img = models.ImageField(upload_to='public/images/industries/industries', verbose_name='banner', null=True)

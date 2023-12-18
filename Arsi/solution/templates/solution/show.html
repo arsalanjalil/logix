@@ -2,13 +2,14 @@
 {% load static %}
 {% block content %}
         <!-- Start Page Title -->
-		{% for sol in solutions %}
+		
         <div class="page-title-area" width="auto" >
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
-                        <h2>Elevate Your Efficiency: Office & Business Process Automation Solutions</h2>
-						<p>Streamline your workflow, boost productivity, and unlock the full potential of your business with our cutting-edge Office & Business Process Automation solutions. From task optimization to seamless document management, experience a new era of efficiency that empowers your team to focus on what matters most—innovation and growth.</p>
+						<h2>{{solution.name|safe}}</h2>
+                        <h3>{{solution.title|safe}}</h3>
+						<p> {{solution.description|safe}}</p>
                     </div>
                 </div>
 			</div>
@@ -27,27 +28,28 @@
         <!-- Start Features Details Area -->
         <div class="features-details-area ptb-80">
             <div class="container">
+				{% for ff in solution.feature_set.all%}
                 <div class="row align-items-center">
+					{% if forloop.counter0|divisibleby:'2'  %}
                     <div class="col-lg-6 features-details-image">
-                        <img src="{% static '' %}assets/img/features-details-image/1.png" class="wow fadeInUp" alt="image">
+                        <img src="{{ff.url}}" class="wow fadeInUp" alt="image">
                     </div>
 
                     <div class="col-lg-6 features-details">
-                        <div class="features-details-desc">
-                            <h3>Information Retrieval</h3>
-                            <p>Build integration aute irure design in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat design proident.</p>
-
-                            <ul class="features-details-list">
-                                <li>Life time supports</li>
-                                <li>Exclusive design</li>
-                                <li>Solve your problem with us</li>
-                                <li>We Provide Awesome Services</li>
-                                <li>Your business deserves best Software</li>
-                            </ul>
-                        </div>
+                        {{ff.code|safe}}
                     </div>
-                </div>
+					{% else %}
 
+
+						<div class="col-lg-6 features-details">
+							{{ff.code|safe}}
+						</div>
+						<div class="col-lg-6 features-details-image">
+							<img src="{{ff.url}}" class="wow fadeInUp" alt="image">
+						</div>
+					{% endif %}
+                </div>
+				{% endfor %}
                 <div class="separate"></div>
 
                 <div class="row align-items-center">
@@ -92,9 +94,10 @@
 						<img src="{% static '' %}assets/img/features-details-image/2.png" class="wow fadeInUp" alt="image">
 					</div>
 				</div>
+			
             </div>
         </div>
-		{% endfor %}
+		
         <!-- End Features Details Area -->
 
 

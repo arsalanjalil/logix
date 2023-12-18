@@ -3,8 +3,7 @@ from api_store.settings import STATIC_URL as static
 from ckeditor.fields import RichTextField
 from django.contrib import admin
 from industry.models import Industry
-# Create your models here.
-from faicon.fields import FAIconField
+
 
 
 import random
@@ -18,7 +17,7 @@ class Service(models.Model):
     description = RichTextField()
     short_description = models.TextField(null=True, verbose_name='short_description')
     img = models.ImageField(upload_to='public/images/services/service',verbose_name='img',null=True)
-    icon = FAIconField(null=True)
+    icon = models.TextField(null=True)
     alt = models.CharField(max_length=200, verbose_name='alt')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -122,19 +121,18 @@ class Feature(models.Model):
 
 class Detaile(models.Model):
     detail = models.CharField(max_length=250, verbose_name='name',null=True)   
-    icon = FAIconField()
+    icon = models.TextField(null=True)
     feature = models.ForeignKey(Feature , on_delete=models.CASCADE)
 
     def __str__(self):
         return self.detail
 
-    def showIcon(self):
-        return self.icon.icon_html() 
+
  
 
 class OurFeature(models.Model):
     name = models.CharField(max_length=250, verbose_name='name',null=True)
-    icon = FAIconField()
+    icon = models.TextField(null=True)
     service = models.ForeignKey(Service , on_delete=models.CASCADE,default=0)
 
     def __str__(self):
