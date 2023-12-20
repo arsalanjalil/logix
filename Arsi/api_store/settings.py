@@ -29,7 +29,7 @@ DEBUG = True
 sys.path.append('/var/www')
 sys.path.append('/var/www/Arsi')
 
-ALLOWED_HOSTS = ['18.216.75.132','127.0.0.1']
+ALLOWED_HOSTS = ['18.224.22.226','127.0.0.1']
 
 STATIC_ROOT = '/var/www/Arsi/public/'
 
