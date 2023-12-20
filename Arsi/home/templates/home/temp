@@ -1,0 +1,32 @@
+<div class="about-area pt-0 ptb-80">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="ml-about-img">
+                    <img src="{% static '' %}assets/img/about4.png" alt="image">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="ml-about-content">
+                    <span class="sub-title">About Us</span>
+                    {% for header in headers %}
+                    
+<!--                    <h2>Engaging New Audiences Through Smart Approach</h2>-->
+                    <div class="bar"></div>
+                    <p>{{header.description|safe}}</p>
+                    {% endfor %}
+
+<!--                    <a href="contact.html" class="btn btn-secondary">Discover More</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="shape1"><img src="{% static '' %}assets/img/shape1.png" alt="shape"></div>
+    <div class="shape2 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+    <div class="shape3"><img src="{% static '' %}assets/img/shape3.svg" alt="shape"></div>
+    <div class="shape4"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+    <div class="shape7"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>
+    <div class="shape8 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
+</div>
