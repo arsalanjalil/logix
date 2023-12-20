@@ -10,5 +10,6 @@ def all(request):
 
 def show(request,id):
         solutions = Solution.objects.get(id=id)
-        context = {'solution': solutions}
+        all = Solution.objects.all()
+        context = {'solution': solutions,'solutions':all}
         return render(request,'solution/show.html',context)

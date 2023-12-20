@@ -23,24 +23,27 @@
 	<!-- End Page Title -->
 	
 	<!-- Start Services Area -->
-	<div class="agency-services-area ptb-80">
+	<div class="solutions-area ptb-80">
 		<div class="container">
 			<div class="row">
-				{% for sol in solutions %}
-				<div class="col-lg-4 col-sm-6 col-md-6">
-					<div class="agency-services-box">
-						<img src="{{sol.url}}" alt="{{sol.alt}}">
 
-						<div class="content">
-							<h3><a href="{% url 'show_solution' id=1 %}">{{sol.name}}</a></h3>
-							<a href="{% url 'show_solution' id=sol.id %}" class="read-more-btn">Read More <i data-feather="plus-circle"></i></a>
+				{% for solution1 in solutions %}
+				<div class="col-lg-3 col-sm-6 col-md-6" >
+					<div class="single-solutions-box">
+						<div class="icon">
+							<img width="50" height="50" src="{{solution1.url}}" alt="image">
 						</div>
+						<h3><a href="{% url 'show_solution' id=solution1.id %}">{{solution1.name}}</a></h3>
+						<p>{{solution1.short_title}}</p>
+						<a href="{% url 'show_solution' id=solution1.id %}" class="learn-more-btn"><i data-feather="plus-circle"></i> Learn More</a>
 					</div>
 				</div>
 				{% endfor %}
+
 			</div>
 		</div>
 
+		<div class="shape1"><img src="{% static '' %}assets/img/shape1.png" alt="shape"></div>
 		<div class="shape2 rotateme"><img src="{% static '' %}assets/img/shape2.svg" alt="shape"></div>
 		<div class="shape3"><img src="{% static '' %}assets/img/shape3.svg" alt="shape"></div>
 		<div class="shape4"><img src="{% static '' %}assets/img/shape4.svg" alt="shape"></div>

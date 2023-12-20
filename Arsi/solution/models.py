@@ -22,6 +22,18 @@ class Solution(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def short_title(self):
+        words = self.title.split()
+
+    # Check if the number of words is greater than 10
+        if len(words) > 7:
+            # Return the first 10 words
+            return ' '.join(words[:7])+'...'
+        else:
+        # If the number of words is 10 or fewer, return the original string
+            return self.title
+
         
 class Feature(models.Model):
     feature = models.CharField(max_length=250, verbose_name="name")
